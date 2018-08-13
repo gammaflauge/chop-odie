@@ -12,11 +12,16 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import Login from './components/Login.vue';
 import Hello from './components/Hello.vue';
+import NewProject from './components/NewProject.vue';
 
 const router = new VueRouter({
   routes: [
     { path: '/', name: 'login', component: Login },
-    { path: '/user/:id', name: 'hello', component: Hello },
+    { path: '/user/:id', name: 'hello', component: Hello,
+      children: [
+        { path: 'newproject', name:'newproject', component: NewProject },
+      ],
+    },
   ]
 })
 

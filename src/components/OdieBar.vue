@@ -5,7 +5,10 @@
         <img id="odie" src="../assets/odie.svg" class="d-inline-block align-top" width="20" height="30">
         welcome {{ user }}
       </b-navbar-brand>
-      <b-button variant="success">+ worklet</b-button>
+      <b-button variant="success"
+                @click="$router.push({ name: 'newproject', params: { id: $route.params.id } })">
+        + project
+      </b-button>
     </b-navbar>
     <b-tooltip ref="tooltip" target="odie">
       <strong>Woof!</strong>
